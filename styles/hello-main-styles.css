@@ -59,6 +59,10 @@ li {
     .fr {
         display: none;
     }
+    
+    .main-content-title {
+        display: none;
+    }
 
     .fl {
         width: 100%;
@@ -279,7 +283,8 @@ li {
 }
 
 .project-grid {
-    display: grid;
+    /* display: grid; */
+    display: flex; /* 使用 Flexbox 布局 */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自适应列数 */
     gap: 16px;
 }
@@ -300,7 +305,7 @@ li {
 
 .project-item img {
     width: 100%;
-    height: 120px;
+    height: auto;
     object-fit: cover;
 }
 
