@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kun Di Arch</title>    
+    <link rel="stylesheet" href="styles/hello-main-styles.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧栏 -->
+        <div class="sidebar">
+            <!-- 公司介绍 -->
+            <div class="sidebar-block">
+                <h2>公司介绍</h2>
+                <p>
+                    我们是一家专注于科技创新的公司，致力于为用户提供优质的产品和服务。
+                </p>
+            </div>
+
+            <!-- 产品介绍 -->
+            <div class="sidebar-block">
+                <h2>产品介绍</h2>
+                <ul>
+                    <li><a href="#"><i class="fas fa-box"></i>产品 A</a></li>
+                    <li><a href="#"><i class="fas fa-box"></i>产品 B</a></li>
+                    <li><a href="#"><i class="fas fa-box"></i>产品 C</a></li>
+                </ul>
+            </div>
+
+            <!-- 团队优势 -->
+            <div class="sidebar-block">
+                <h2>团队优势</h2>
+                <p>
+                    我们的团队由行业专家组成，拥有丰富的经验和强大的技术实力。
+                </p>
+            </div>
+        </div>
+
+        <!-- 右侧主内容区 -->
+        <div class="main-content">
+            <!-- 导航栏 -->
+            <!-- <div class="nav">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="#news">关于我</a></li>
+                    <li><a href="hello-city.html">作品展示</a></li>
+                </ul>
+            </div> -->
+            <!-- 导航栏 -->
+            <section class="navsection">
+                <div class="fl">
+                    <ul>
+                        <ul><a href="#">请登录</a> &nbsp; <a href="#">注册</a></ul>
+                    </ul>
+                </div>
+                <div class="fr">
+                    <ul>
+                        <li><a href="index.html">主页</a></li>
+                        <li></li>
+                        <li><a href="#news">关于我</a></li>
+                        <li></li>
+                        <li><a href="hello-city.html">作品展示</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="main-content-title"><span>住宅日照模拟公园</span></div>
+            <!-- 搜索块 -->
+            <div class="search-block">
+                <label for="province">省份：</label>
+                <select id="province" >
+                    <option value="">请选择省份</option>
+                    <option value="gd">广东省</option>
+                    <option value="zj">浙江省</option>
+                    <option value="js">江苏省</option>
+                    <option value="sd">山东省</option>
+                    <option value="gx">广西省</option>
+                </select>
+
+                <!-- <label for="city">城市：</label>
+                <select id="city" disabled>
+                    <option value="">请选择城市</option>
+                </select> -->
+            </div>
+            <div class="city-grid active" id="cityList">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>广东</td>
+                            <td>
+                                <div class="card">
+                                    <div class="city-list">
+                                        <!-- 显示前 8 个城市 -->
+                                        <span class="city" onclick="redirectToCity('广州')">广州</span>
+                                        <span class="city" onclick="redirectToCity('深圳')">深圳</span>
+                                        <span class="city" onclick="redirectToCity('佛山')">佛山</span>
+                                        <span class="city" onclick="redirectToCity('东莞')">东莞</span>
+                                        <span class="city" onclick="redirectToCity('中山')">中山</span>
+                                        <span class="city" onclick="redirectToCity('珠海')">珠海</span>
+                                        <span class="city" onclick="redirectToCity('江门')">江门</span>
+                                        <span class="city" onclick="redirectToCity('肇庆')">肇庆</span>
+                                        <!-- 省略剩余城市 -->
+                                        <span class="more-icon" onclick="showMoreCities()">...</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>浙江</td>
+                            <td>
+                                <div class="card">
+                                    <div class="city-list">
+                                        <span class="city" onclick="redirectToCity('杭州')">杭州</span>
+                                        <span class="city" onclick="redirectToCity('宁波')">宁波</span>
+                                        <span class="city" onclick="redirectToCity('温州')">温州</span>
+                                        <span class="city" onclick="redirectToCity('嘉兴')">嘉兴</span>
+                                        <span class="city" onclick="redirectToCity('湖州')">湖州</span>
+                                        <span class="city" onclick="redirectToCity('绍兴')">绍兴</span>
+                                        <span class="city" onclick="redirectToCity('金华')">金华</span>
+                                        <span class="city" onclick="redirectToCity('衢州')">衢州</span>
+                                        <span class="city" onclick="redirectToCity('舟山')">舟山</span>
+                                        <span class="city" onclick="redirectToCity('台州')">台州</span>
+                                        <span class="city" onclick="redirectToCity('丽水')">丽水</span>
+                                        <!-- 省略剩余城市 -->
+                                        <span class="more-icon" onclick="showMoreZjCities()">...</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>江苏</td>
+                            <td>
+                                <div class="card">
+                                    <div class="city-list">
+                                        <span class="city" onclick="redirectToCity('南京')">南京</span>
+                                        <span class="city" onclick="redirectToCity('无锡')">无锡</span>
+                                        <span class="city" onclick="redirectToCity('徐州')">徐州</span>
+                                        <span class="city" onclick="redirectToCity('常州')">常州</span>
+                                        <span class="city" onclick="redirectToCity('苏州')">苏州</span>
+                                        <span class="city" onclick="redirectToCity('南通')">南通</span>
+                                        <span class="city" onclick="redirectToCity('连云港')">连云港</span>
+                                        <span class="city" onclick="redirectToCity('淮安')">淮安</span>
+                                        <span class="city" onclick="redirectToCity('盐城')">盐城</span>
+                                        <span class="city" onclick="redirectToCity('扬州')">扬州</span>
+                                        <span class="city" onclick="redirectToCity('镇江')">镇江</span>
+                                        <span class="city" onclick="redirectToCity('泰州')">泰州</span>
+                                        <span class="city" onclick="redirectToCity('宿迁')">宿迁</span>
+                                        <!-- 省略剩余城市 -->
+                                        <span class="more-icon" onclick="showMoreJsCities()">...</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 动态生成 -->
+            <div class="city-grid" id="cityListAuto">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>广西</td>
+                            <td>
+                                <div class="card">
+                                    <div class="city-list">
+                                        <!-- 显示前 8 个城市 -->
+                                        <span class="city" onclick="redirectToCity('南宁')">南宁</span>
+                                        <!-- 省略剩余城市 -->
+                                        <span class="more-icon" onclick="showMoreCities()">...</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal" id="cityModal">
+        <div class="modal-content">
+            <div class="city-list">
+                <!-- 所有 城市 -->
+                <span class="city" onclick="redirectToCity('肇庆')">肇庆</span>
+                <span class="city" onclick="redirectToCity('惠州')">惠州</span>
+                <span class="city" onclick="redirectToCity('汕头')">汕头</span>
+                <span class="city" onclick="redirectToCity('潮州')">潮州</span>
+                <span class="city" onclick="redirectToCity('揭阳')">揭阳</span>
+                <span class="city" onclick="redirectToCity('茂名')">茂名</span>
+                <span class="city" onclick="redirectToCity('阳江')">阳江</span>
+                <span class="city" onclick="redirectToCity('云浮')">云浮</span>
+                <span class="city" onclick="redirectToCity('韶关')">韶关</span>
+                <span class="city" onclick="redirectToCity('清远')">清远</span>
+                <span class="city" onclick="redirectToCity('梅州')">梅州</span>
+                <span class="city" onclick="redirectToCity('河源')">河源</span>
+            </div>
+            <button class="close" onclick="closeModal()">关闭</button>
+        </div>
+    </div>
+
+    <!-- Font Awesome 图标库 -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <script src="scripts/hello-main.js"></script>
+</body>
+</html>
