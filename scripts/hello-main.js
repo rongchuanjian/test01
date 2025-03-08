@@ -27,8 +27,8 @@ function closeModal() {
 
 // 跳转到城市页面
 function redirectToCity(cityName) {
-    // window.location.href = `https://example.com/city/${cityName}`;
-    window.location.href = `hello-city.html`;
+    window.location.href = `hello-city.html?city=${cityName}`;
+    // window.location.href = `hello-city.html`;
 }
 
 // 添加点击事件监听器
@@ -102,3 +102,122 @@ function generateTable(data) {
 window.addEventListener('DOMContentLoaded', () => {
     generateTable(employees);
 });
+
+
+const gdCitiesData = {
+    "cities": [
+        "广州",
+        "深圳",
+        "珠海",
+        "汕头",
+        "佛山",
+        "韶关",
+        "湛江",
+        "肇庆",
+        "江门",
+        "茂名",
+        "惠州"
+    ]
+};
+
+const zjCitiesData = {
+    "zjCities": [
+        "杭州",
+        "宁波",
+        "温州",
+        "嘉兴",
+        "湖州",
+        "绍兴",
+        "金华",
+        "衢州",
+        "舟山",
+        "台州",
+        "丽水"
+    ]
+};
+
+const jsCitiesData = {
+    "jsCities": [
+        "南京",
+        "苏州",
+        "镇江",
+        "徐州",
+        "扬州"
+    ]
+};
+const gdCitiesData1 = {
+        "广东": {
+          "gz": "广州市",
+          "sz": "深圳市",
+          "zh": "珠海市",
+          "st": "汕头市",
+          "sg": "韶关市",
+          "fs": "佛山市",
+          "zj": "湛江市",
+          "zq": "肇庆市",
+          "jm": "江门市",
+          "hz": "惠州市",
+          "mz": "梅州市",
+          "hy": "河源市",
+          "qy": "清远市",
+          "dg": "东莞市",
+          "cz": "潮州市",
+          "zs": "中山市"
+        }
+}
+
+function loadCities() {
+    const gdCityList = document.getElementById('gd');
+    const zjCityList = document.getElementById('zj');
+    const jsCityList = document.getElementById('js');
+    gdCitiesData.cities.forEach(city => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = city;
+        a.href = `hello-city.html?city=${encodeURIComponent(city)}`; // 跳转链接，传递城市名
+        li.appendChild(a);
+        gdCityList.appendChild(li);
+    });
+    
+    zjCitiesData.zjCities.forEach(zjCity => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = zjCity;
+        a.href = `hello-city.html?city=${encodeURIComponent(zjCity)}`; // 跳转链接，传递城市名
+        li.appendChild(a);
+        zjCityList.appendChild(li);
+    });
+    
+    jsCitiesData.jsCities.forEach(jsCity => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.textContent = jsCity;
+        a.href = `hello-city.html?city=${encodeURIComponent(jsCity)}`; // 跳转链接，传递城市名
+        li.appendChild(a);
+        jsCityList.appendChild(li);
+    });
+}
+
+window.onload = loadCities;
+
+//成果展示
+const videoElement = document.getElementById('city-video');
+const videoSource = document.getElementById('video-source');
+videoSource.src = "videos/guangzhou.mp4";
+videoElement.load(); // 加载视频
+
+
+const search = document.getElementById("search");
+
+search.addEventListener(
+"keydown",
+(event) => {
+    if (event.key === 'Enter') {
+        const query = event.target.value;
+        const url = 'hello-city.html?city='+ query;
+        const win = window.open(url, '_blank');
+    }
+},
+false
+);
+
