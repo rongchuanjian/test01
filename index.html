@@ -8,6 +8,12 @@
     <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
 <body>
+            <!-- <img alt="envato-tuts+" class="logo" src="https://static.tutsplus.com/packs/media/images/tuts_logo-ae9e557ae6c08db82f47e6047900e39b.svg"> -->
+            <!-- <img alt="envato-tuts+" class="logo" > -->
+        
+    <div class="header">
+
+    </div>        
     <div class="container">
         <!-- 左侧栏 -->
         <div class="sidebar">
@@ -24,8 +30,6 @@
                 <h2>产品介绍</h2>
                 <ul>
                     <li><a href="#"><i class="fas fa-box"></i>产品 A</a></li>
-                    <li><a href="#"><i class="fas fa-box"></i>产品 B</a></li>
-                    <li><a href="#"><i class="fas fa-box"></i>产品 C</a></li>
                 </ul>
             </div>
 
@@ -36,20 +40,41 @@
                     我们的团队由行业专家组成，拥有丰富的经验和强大的技术实力。
                 </p>
             </div>
+
+            <!-- 成果展示 -->
+            <div class="sidebar-block">
+                <h2>免费成果展示</h2>
+                <div id="video-container">
+                    <!-- 视频 -->
+                    <video id="city-video" controls>
+                        <source id="video-source" src="" type="video/mp4">
+                        您的浏览器不支持视频播放功能。
+                    </video>
+                </div>
+                <div class="show-rpt">
+                    <ul>
+                        <li>
+                            <a href="documents/乐山市景秀峨眉三期.pdf" download class="download-link"><img src="images/pdf-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="documents/乐山市景秀峨眉三期.pdf" download class="download-link"><img src="images/pdf-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="documents/乐山市景秀峨眉三期.pdf" download class="download-link"><img src="images/pdf-icon.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="documents/乐山市景秀峨眉三期.pdf" download class="download-link"><img src="images/pdf-icon.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- 右侧主内容区 -->
         <div class="main-content">
+            
             <!-- 导航栏 -->
-            <!-- <div class="nav">
-                <ul>
-                    <li><a href="index.html">主页</a></li>
-                    <li><a href="#news">关于我</a></li>
-                    <li><a href="hello-city.html">作品展示</a></li>
-                </ul>
-            </div> -->
-            <!-- 导航栏 -->
-            <section class="navsection">
+            <!-- <section class="navsection">
                 <div class="fl">
                     <ul>
                         <ul><a href="#">请登录</a> &nbsp; <a href="#">注册</a></ul>
@@ -64,26 +89,22 @@
                         <li><a href="hello-city.html">作品展示</a></li>
                     </ul>
                 </div>
-            </section>
+            </section> -->
 
-            <div class="main-content-title"><span>住宅日照模拟公园</span></div>
-            <!-- 搜索块 -->
-            <div class="search-block">
-                <!-- <label for="province">省份：</label> -->
-                <select id="province" >
-                    <option value="">请选择省份</option>
-                    <option value="gd">广东省</option>
-                    <option value="zj">浙江省</option>
-                    <option value="js">江苏省</option>
-                    <option value="sd">山东省</option>
-                    <option value="gx">广西省</option>
-                </select>
-
-                <!-- <label for="city">城市：</label>
-                <select id="city" disabled>
-                    <option value="">请选择城市</option>
-                </select> -->
+            <div class="main-content-title">
+                <div class="company-title"><span>坤迪建筑-住宅日照模拟公园</span></div>
+                <div class="search-bar">
+                    <input id="search" type="search" placeholder="&#x1F50D; 请输入城市，按回车键搜索" list="search-suggestions" autocomplete="off"/>
+                    
+                    <datalist id="search-suggestions">
+                        <option value="北京">
+                        <option value="上海">
+                        <option value="深圳">
+                        <option value="广州">
+                    </datalist>
+                </div>
             </div>
+            
             <div class="city-grid active" id="cityList">
                 <table>
                     <tbody>
@@ -91,18 +112,8 @@
                             <td>广东</td>
                             <td>
                                 <div class="card">
-                                    <div class="city-list">
-                                        <!-- 显示前 8 个城市 -->
-                                        <span class="city" onclick="redirectToCity('广州')">广州</span>
-                                        <span class="city" onclick="redirectToCity('深圳')">深圳</span>
-                                        <span class="city" onclick="redirectToCity('佛山')">佛山</span>
-                                        <span class="city" onclick="redirectToCity('东莞')">东莞</span>
-                                        <span class="city" onclick="redirectToCity('中山')">中山</span>
-                                        <span class="city" onclick="redirectToCity('珠海')">珠海</span>
-                                        <span class="city" onclick="redirectToCity('江门')">江门</span>
-                                        <span class="city" onclick="redirectToCity('肇庆')">肇庆</span>
-                                        <!-- 省略剩余城市 -->
-                                        <span class="more-icon" onclick="showMoreCities()">...</span>
+                                    <div class="cities" >
+                                        <ul class="city-list" id="gd"></ul>
                                     </div>
                                 </div>
                             </td>
@@ -111,20 +122,9 @@
                             <td>浙江</td>
                             <td>
                                 <div class="card">
-                                    <div class="city-list">
-                                        <span class="city" onclick="redirectToCity('杭州')">杭州</span>
-                                        <span class="city" onclick="redirectToCity('宁波')">宁波</span>
-                                        <span class="city" onclick="redirectToCity('温州')">温州</span>
-                                        <span class="city" onclick="redirectToCity('嘉兴')">嘉兴</span>
-                                        <span class="city" onclick="redirectToCity('湖州')">湖州</span>
-                                        <span class="city" onclick="redirectToCity('绍兴')">绍兴</span>
-                                        <span class="city" onclick="redirectToCity('金华')">金华</span>
-                                        <span class="city" onclick="redirectToCity('衢州')">衢州</span>
-                                        <span class="city" onclick="redirectToCity('舟山')">舟山</span>
-                                        <span class="city" onclick="redirectToCity('台州')">台州</span>
-                                        <span class="city" onclick="redirectToCity('丽水')">丽水</span>
-                                        <!-- 省略剩余城市 -->
-                                        <span class="more-icon" onclick="showMoreZjCities()">...</span>
+                                    <div class="citys">
+                                        <ul class="city-list" id="zj"></ul>
+                                        <!-- <span class="city" onclick="redirectToCity('杭州')">杭州</span> -->
                                     </div>
                                 </div>
                             </td>
@@ -133,22 +133,9 @@
                             <td>江苏</td>
                             <td>
                                 <div class="card">
-                                    <div class="city-list">
-                                        <span class="city" onclick="redirectToCity('南京')">南京</span>
-                                        <span class="city" onclick="redirectToCity('无锡')">无锡</span>
-                                        <span class="city" onclick="redirectToCity('徐州')">徐州</span>
-                                        <span class="city" onclick="redirectToCity('常州')">常州</span>
-                                        <span class="city" onclick="redirectToCity('苏州')">苏州</span>
-                                        <span class="city" onclick="redirectToCity('南通')">南通</span>
-                                        <span class="city" onclick="redirectToCity('连云港')">连云港</span>
-                                        <span class="city" onclick="redirectToCity('淮安')">淮安</span>
-                                        <span class="city" onclick="redirectToCity('盐城')">盐城</span>
-                                        <span class="city" onclick="redirectToCity('扬州')">扬州</span>
-                                        <span class="city" onclick="redirectToCity('镇江')">镇江</span>
-                                        <span class="city" onclick="redirectToCity('泰州')">泰州</span>
-                                        <span class="city" onclick="redirectToCity('宿迁')">宿迁</span>
-                                        <!-- 省略剩余城市 -->
-                                        <span class="more-icon" onclick="showMoreJsCities()">...</span>
+                                    <div class="citys">
+                                        <ul class="city-list" id="js"></ul>
+                                        <!-- <span class="city" onclick="redirectToCity('南京')">南京</span> -->
                                     </div>
                                 </div>
                             </td>
